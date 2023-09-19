@@ -1,0 +1,88 @@
+.login-Wrapper{
+    width: 100%;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+
+.indro-col{
+    background-image: url(../../../assets/images/bg-login.jpg); /* Replace with the actual path to your image */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 100%;
+}
+
+.indroduction-card{
+    padding: 150px 0 0 100px;
+}
+
+.logo{
+    width: 81px;
+}
+.m-head{
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 48px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+.discription{
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: left;
+    // padding-right: 50px;
+}
+
+.brdr-cornr{
+    border-radius: 5px 0 0 0;
+}
+
+.login-col{
+    height: 100%;
+    padding: 100px 0;
+    .login-form{
+        width: 70%;
+    }
+}
+
+.submit-btn{
+    background-color: #3454CF;
+    font-weight: 600;
+    height: 50px;
+}
+
+.reset-btn{
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translate(0%, -50%);
+    border: 0;
+    background-color: transparent;
+    font-weight: 600;
+    color: #3454CF;
+    cursor: pointer;
+}
+
+.pre-Loader{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100vh;
+    z-index: 999;
+    background-color: #00000029;
+}
+
+@media (max-width: 768px) {
+    .login-Wrapper{
+        height: auto;
+    }
+
+    .indroduction-card{
+        padding: 100px 0 0 50px;
+    }
+}

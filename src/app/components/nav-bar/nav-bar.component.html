@@ -1,0 +1,63 @@
+<nav class="navbar navbar-expand-lg nav-bg sticky-top navbar-dark bg-dark">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"
+            aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="#"><img src="../../../assets/images/logo.png" alt=""></a>
+        <div class="user-profile user-profile-md d-flex align-items-center">
+            <div class="profile-img"> <img src="../../../assets/images/profile-01.jpg" alt=""></div>
+            <div class="profile-descr">
+                <div class="name fnt-14 fnt-w500 wht Urbanist">Ann Maria</div>
+                <div class="occuptn fnt-12 fnt-w500 wht Urbanist">Lead tracker user</div>
+            </div>
+            <button class="icons d-flex justify-content-center align-items-center">
+                <img src="../../../assets/icons/settings.svg" alt="">
+            </button>
+            <button class="icons d-flex justify-content-center align-items-center">
+                <img src="../../../assets/icons/log-out.svg" alt="">
+            </button>
+        </div>
+        <div class="collapse navbar-collapse nav-menu-res" id="navbarTogglerDemo03">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link Urbanist" [class.active]="activeMenu === 1"
+                        routerLink="/dashboard">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link Urbanist" [class.active]="activeMenu === 2"
+                        routerLink="#">Leads</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link Urbanist" [class.active]="activeMenu === 3"
+                        routerLink="/question">Questions</a>
+                </li>
+            </ul>
+            <div class="d-flex" role="search">
+                <div class="nav-search ps-rl me-2">
+                    <div class="search-ico"><img src="../../../assets/icons/search.svg" alt=""></div>
+                    <input class="fnt-14 fnt-w500 wht Urbanist" type="text" placeholder="Search">
+                </div>
+                <button class="btn add-leads Urbanist d-flex justify-content-center align-items-center wht fnt-14 fnt-w600">
+                    <span class="fnt-25 fnt-w200 mr-5">+</span> Add Leads
+                </button>
+            </div>
+
+            <div class="user-profile user-profile-lg-n d-flex align-items-center">
+                <div class="profile-img"> <img src="../../../assets/images/profile-01.jpg" alt=""></div>
+                <div class="profile-descr">
+                    <div class="name fnt-14 fnt-w500 wht Urbanist">Ann Maria</div>
+                    <div class="occuptn fnt-12 fnt-w500 wht Urbanist">Lead tracker user</div>
+                </div>
+                <button class="icons d-flex justify-content-center align-items-center">
+                    <img src="../../../assets/icons/settings.svg" alt="">
+                </button>
+                <button class="icons d-flex justify-content-center align-items-center" routerLink="/login">
+                    <img src="../../../assets/icons/log-out.svg" alt="">
+                </button>
+            </div>
+
+        </div>
+    </div>
+</nav>

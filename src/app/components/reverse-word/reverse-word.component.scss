@@ -1,0 +1,33 @@
+.reverse-waper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: calc(100vh - 70px);
+    flex-direction: column;
+}
+.data-entry{
+    width: 40%;
+    display: flex;
+    button{
+        white-space: nowrap;
+        padding: 10px 30px;
+        background-color: #3454cf;
+        border-radius: 0 5px 5px 0;
+        border: 2px solid #3454cf;
+    }
+    input{
+        border-radius: 5px 0 0 5px;
+        box-shadow: none;
+        border: 2px solid #3454cf;
+    }
+}
+
+.reverse-word-result{
+    padding: 0.375rem 0.75rem;
+    margin-top: 30px;
+    background-color: #fcfcfc;
+    width: 40%;
+    max-height: 300px;
+    overflow: auto;
+}

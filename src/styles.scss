@@ -1,0 +1,43 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+// @import "~font-awesome/css/font-awesome.min.css";
+
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&display=swap');
+body{
+    margin: o;
+    padding: 0;
+}
+
+.Urbanist{
+    font-family: 'Urbanist', sans-serif;
+}
+
+.blk{color: #000;}
+.wht{color: #fff;}
+.thm-blue{color: #3454CF;}
+.opacity-5{
+    opacity: .5;
+}
+
+.z-inx1{z-index: 1;}
+
+.fnt-10{font-size: 10px;}.fnt-11{font-size: 11px;}.fnt-12{font-size: 12px;}.fnt-13{font-size: 13px;}.fnt-14{font-size: 14px;}
+.fnt-15{font-size: 15px;}.fnt-16{font-size: 16px;}.fnt-17{font-size: 17px;}.fnt-18{font-size: 18px;}.fnt-19{font-size: 19px;}
+.fnt-20{font-size: 20px;}.fnt-21{font-size: 21px;}.fnt-22{font-size: 22px;}.fnt-23{font-size: 23px;}.fnt-24{font-size: 24px;}
+.fnt-25{font-size: 25px;}.fnt-26{font-size: 26px;}.fnt-27{font-size: 27px;}.fnt-28{font-size: 28px;}.fnt-29{font-size: 29px;}
+.fnt-30{font-size: 30px;}.fnt-31{font-size: 31px;}.fnt-32{font-size: 32px;}.fnt-33{font-size: 33px;}.fnt-34{font-size: 34px;}
+.fnt-35{font-size: 35px;}
+
+.fnt-w200{font-weight: 200;}.fnt-w300{font-weight: 300;}.fnt-w400{font-weight: 400;}.fnt-w500{font-weight: 500;}.fnt-w600{font-weight: 600;}.fnt-w700{font-weight: 700;}
+.fnt-w800{font-weight: 800;}.fnt-w900{font-weight: 900;}
+
+.pr-5{padding-right: 5px;}.pr-10{padding-right: 10px;}.pr-15{padding-right: 15px;}.pr-20{padding-right: 20px;}
+.pr-25{padding-right: 25px;}.pr-30{padding-right: 30px;}.pr-35{padding-right: 35px;}.pr-40{padding-right: 40px;}
+.pr-45{padding-right: 45px;}.pr-50{padding-right: 50px;}.pr-130{padding-right: 130px;}
+
+.ps-rl{position: relative;}.ps-fx{position: fixed;}.ps-ab{position: absolute;}
+
+.txt-n-wrp{
+    white-space: nowrap;
+}

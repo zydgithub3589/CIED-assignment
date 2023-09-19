@@ -1,0 +1,208 @@
+<app-nav-bar [menuSelected]="activeMenu"></app-nav-bar>
+
+<div class="dashboard-wrpr">
+    <div class="container">
+        <div class="m-head Urbanist blk mb-5 mt-5">Welcome to Lead tracker!</div>
+        <div class="btn-group mb-5" role="group" aria-label="Basic radio toggle button group">
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+            <label class="btn btn-outline-primary Urbanist fnt-14 fnt-w600" for="btnradio1">Active (30)</label>
+
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+            <label class="btn btn-outline-primary Urbanist fnt-14 fnt-w600" for="btnradio2">Won (25)</label>
+
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+            <label class="btn btn-outline-primary Urbanist fnt-14 fnt-w600" for="btnradio3">Lost (20)</label>
+        </div>
+
+        <div class="row gx-3 gy-5">
+            <div class="col-md-5">
+                <div class="sub-head fnt-18 fnt-w600 blk Urbanist mb-3">Probabilities</div>
+                <div class="Probabilities">
+                    <div *ngFor="let data of graphData" class="bar ps-rl">
+                        <div class="bar-width" [style.width.%]="data.value" [style.background-color]="data.color"></div>
+                        <div class="prob-val fnt-18 Urbanist fnt-w700 blk ps-ab">{{data.value}}%</div>
+                        <div class="prob-descri fnt-14 Urbanist fnt-w700 blk ps-ab">{{data.description}}</div>
+                        <div class="prob-leads fnt-18 Urbanist fnt-w700 blk ps-ab">{{data.lead}} Leads</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="sub-head fnt-18 fnt-w600 blk Urbanist mb-3">Graph</div>
+                <div class="graph">
+                    <div class="x-axs me-2">
+                        <div class="x-axs-val fnt-12 blk fnt-w700 Urbanist opacity-5">30</div>
+                        <div class="x-axs-val fnt-12 blk fnt-w700 Urbanist opacity-5">20</div>
+                        <div class="x-axs-val fnt-12 blk fnt-w700 Urbanist opacity-5">10</div>
+                        <div class="x-axs-val fnt-12 blk fnt-w700 Urbanist opacity-5">0</div>
+                    </div>
+                    <div class="col d-flex justify-content-between ps-rl">
+                        <div *ngFor="let data of barGraph" class="bar-colmn ps-rl d-flex justify-content-center align-items-end z-inx1">
+                            <div class="bar-set" [style.height.%]="data.value" [style.background-color]="data.color"></div>
+                            <div class="y-axs fnt-12 fnt-w700 Urbanist opacity-5">{{data.description}}</div>
+                        </div>
+                        <div class="x-line d-flex justify-content-between ps-ab w-100">
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="sub-head fnt-18 fnt-w600 blk Urbanist mb-3">Active leads status</div>
+                <div class="row g-3">
+                    <div class="col">
+                        <div class="lead-status" [class.active-lead]="activeButton === 1" (click)="setActiveButton(1)">
+                            <div class="fnt-18 fnt-w500 Urbanist txt-n-wrp {{activeButton===1?'wht':'blk'}}">Contact made</div>
+                            <div class="fnt-24 fnt-w700 Urbanist {{activeButton===1?'wht':'blk'}}">15</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="lead-status" [class.active-lead]="activeButton === 2" (click)="setActiveButton(2)">
+                            <div class="fnt-18 fnt-w500 Urbanist txt-n-wrp {{activeButton===2?'wht':'blk'}}">Initial interest</div>
+                            <div class="fnt-24 fnt-w700 Urbanist {{activeButton===2?'wht':'blk'}}">05</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="lead-status" [class.active-lead]="activeButton === 3" (click)="setActiveButton(3)">
+                            <div class="fnt-18 fnt-w500 Urbanist txt-n-wrp {{activeButton===3?'wht':'blk'}}">First intro meeting</div>
+                            <div class="fnt-24 fnt-w700 Urbanist {{activeButton===3?'wht':'blk'}}">05</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="lead-status" [class.active-lead]="activeButton === 4" (click)="setActiveButton(4)">
+                            <div class="fnt-18 fnt-w500 Urbanist txt-n-wrp {{activeButton===4?'wht':'blk'}}">Follow up meeting</div>
+                            <div class="fnt-24 fnt-w700 Urbanist {{activeButton===4?'wht':'blk'}}">02</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="lead-status" [class.active-lead]="activeButton === 5" (click)="setActiveButton(5)">
+                            <div class="fnt-18 fnt-w500 Urbanist txt-n-wrp {{activeButton===5?'wht':'blk'}}">Workshop stage</div>
+                            <div class="fnt-24 fnt-w700 Urbanist {{activeButton===5?'wht':'blk'}}">01</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="co-md-12">
+                <div class="d-flex align-items-center mb-3">
+                    <div class="sub-head fnt-18 fnt-w600 blk Urbanist  me-4">Recently active leads</div>
+                    <div class="nav-search ps-rl">
+                        <div class="search-ico"><img src="../../../assets/icons/searchBlk.svg" alt=""></div>
+                        <input class="fnt-14 fnt-w500 blk Urbanist" type="text" placeholder="Search Leads">
+                    </div>
+                </div>
+                <div class="table-scroll">
+                    <div class="fx-wdth">
+                        <table class="table table-hover table-spacing">
+                            <thead>
+                                <tr>
+                                    <th scope="col">
+                                        <div class="table-data-hd d-flex align-items-center">
+                                            <div class="pd-table Urbanist fnt-12 fnt-w700 opacity-5">Lead Name</div>
+                                        </div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="table-data-hd d-flex align-items-center">
+                                            <div class="pd-table Urbanist fnt-12 fnt-w700 opacity-5">Date added</div>
+                                        </div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="table-data-hd d-flex align-items-center">
+                                            <div class="pd-table Urbanist fnt-12 fnt-w700 opacity-5">Current state</div>
+                                        </div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="table-data-hd d-flex align-items-center">
+                                            <div class="pd-table Urbanist fnt-12 fnt-w700 opacity-5">Probability</div>
+                                        </div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="table-data-hd d-flex align-items-center">
+                                            <div class="pd-table Urbanist fnt-12 fnt-w700 opacity-5">Team size</div>
+                                        </div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="table-data-hd d-flex align-items-center">
+                                            <div class="pd-table Urbanist fnt-12 fnt-w700 opacity-5">Location</div>
+                                        </div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="table-data-hd d-flex align-items-center">
+                                            <div class="pd-table Urbanist fnt-12 fnt-w700 opacity-5">Revenue</div>
+                                        </div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="table-data-hd d-flex align-items-center">
+                                            <div class="pd-table Urbanist fnt-12 fnt-w700 opacity-5">Catogory</div>
+                                        </div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let data of activeLeads">
+                                    <td>
+                                        <div class="table-data d-flex align-items-center">
+                                            <div class="pd-table Urbanist fnt-14 fnt-w600 blk">
+                                                <span class="lead-img"><img [src]="data.leadLogo"
+                                                        alt="{{data.leadName}}"></span>
+                                                {{data.leadName}}
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="table-data d-flex align-items-center">
+                                            <div class="pd-table Urbanist fnt-14 fnt-w600 blk">{{data.dateAdded}}</div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="table-data d-flex align-items-center">
+                                            <div class="pd-table Urbanist fnt-14 fnt-w600 blk">{{data.currentState}}
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="table-data d-flex align-items-center">
+                                            <div class="pd-table Urbanist fnt-12 fnt-w600 blk">
+                                                <span class="probablity"
+                                                    [style.background-color]="data.probabilityColor">{{data.probability}}</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="table-data d-flex align-items-center">
+                                            <div class="pd-table Urbanist fnt-14 fnt-w600 blk">{{data.teamSize}}</div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="table-data d-flex align-items-center">
+                                            <div class="pd-table Urbanist fnt-14 fnt-w600 blk">{{data.location}}</div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="table-data d-flex align-items-center">
+                                            <div class="pd-table Urbanist fnt-14 fnt-w600 blk">{{data.revenue}}</div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="table-data d-flex align-items-center">
+                                            <div class="pd-table Urbanist fnt-14 fnt-w600 blk">{{data.category}}</div>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="view-all d-flex justify-content-center mb-5">
+                    <button class="btn btn-primary fnt-14 fnt-w700 wht Urbanist">View All</button>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>

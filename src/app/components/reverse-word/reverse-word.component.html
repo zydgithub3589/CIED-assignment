@@ -1,0 +1,12 @@
+<app-nav-bar [menuSelected]="activeMenu"></app-nav-bar>
+
+<div class="reverse-waper">
+     <div class="data-entry" [formGroup]="reverseWordForm">
+        <input [(ngModel)]="originalWord" formControlName="originalWord" class="form-control Urbanist fnt-14 blk"  type="text" placeholder="Enter Any">
+        <button class="btn btn-primary Urbanist fnt-14 fnt-w600" type="submit" (click)="reverseWord()">Show In Reverse</button>
+     </div>
+     
+     <div *ngIf="!!reversedWord" class="reverse-word-result Urbanist fnt-164 blk fnt-w700">
+        {{reversedWord}}
+     </div>
+</div>
