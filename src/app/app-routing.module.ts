@@ -5,6 +5,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ReverseWordComponent } from './components/reverse-word/reverse-word.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path : 'login' , component : LoginComponent },
   { path : 'dashboard' , component : DashboardComponent },
   { path : 'question' , component : ReverseWordComponent }
